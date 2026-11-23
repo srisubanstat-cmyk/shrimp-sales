@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ขายกุ้ง</title>
+<meta name="apple-mobile-web-app-title" content="ขายกุ้ง">
+<meta name="theme-color" content="#0d5f6e">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<script>
+  // ลิงก์ Dashboard ฝ่ายขายกุ้ง (ถ้า deploy ใหม่จนลิงก์เปลี่ยน ให้แก้บรรทัดนี้บรรทัดเดียว)
+  var DASHBOARD = 'https://script.google.com/macros/s/AKfycbxi_8NKivCQKQx3NYM5Wsio36BlivhsPDQnKWUG000gXsceaYHhAuHQpiCNYyocg8WAuA/exec';
+  // เปิดจากไอคอนหน้าจอโทรศัพท์ (?go=1) -> ไป Dashboard ทันที
+  if (/[?&]go=1/.test(location.search)) location.replace(DASHBOARD);
+</script>
+<style>
+  :root{--bg:#f5f7f7;--ink:#0f1c1f;--ink2:#4a5a5e;--accent:#0d5f6e}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;padding:24px 16px;display:flex;flex-direction:column;align-items:center;gap:18px;text-align:center}
+  img{width:150px;height:150px;border-radius:50%}
+  h1{font-size:22px;margin:0}
+  a.btn{display:block;width:100%;max-width:340px;background:var(--accent);color:#fff;text-decoration:none;padding:14px;border-radius:12px;font-size:17px;font-weight:600}
+  .how{max-width:340px;text-align:left;font-size:14.5px;line-height:1.6;color:var(--ink2);background:#fff;border-radius:12px;padding:12px 16px}
+  .how b{color:var(--ink)}
+</style>
+</head>
+<body>
+  <img src="icon-512.png" alt="โลโก้ฝ่ายขาย Srisuban Farm">
+  <h1>ฝ่ายขายกุ้ง ศรีสุบรรณ</h1>
+  <a class="btn" id="open" href="#">เปิด Dashboard</a>
+  <div class="how">
+    <b>ปักไอคอนไว้หน้าจอโทรศัพท์</b><br>
+    <b>Android (Chrome):</b> กด ⋮ มุมขวาบน → "เพิ่มลงในหน้าจอหลัก"<br>
+    <b>iPhone (Safari):</b> กดปุ่มแชร์ □↑ → "เพิ่มไปยังหน้าจอโฮม"<br>
+    ครั้งต่อไปกดไอคอนแล้วจะเข้า Dashboard ทันที
+  </div>
+  <script>
+    document.getElementById('open').href = DASHBOARD;
+    // ให้ iPhone บันทึกลิงก์แบบ ?go=1 ตอนกดเพิ่มไปยังหน้าจอโฮม
+    try { history.replaceState(null, '', location.pathname + '?go=1'); } catch (e) {}
+  </script>
+</body>
+</html>

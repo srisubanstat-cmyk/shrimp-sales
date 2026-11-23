@@ -3,7 +3,7 @@
   "short_name": "ขายกุ้ง",
   "start_url": "./?go=1",
   "scope": "./",
-  "display": "browser",
+  "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#0d5f6e",
   "icons": [
